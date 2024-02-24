@@ -17,11 +17,21 @@ body{
     background-color: #f6f7fb;
     flex-direction: row;
 }
-.container{
+.progress-outer-container{
     text-align: center;
 }
 
 /* Progress bar*/
+.progress-fixed-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
 .progress-container{
     display: flex;
     justify-content: space-between;
