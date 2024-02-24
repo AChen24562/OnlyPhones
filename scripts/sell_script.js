@@ -2,6 +2,8 @@ const progress = document.getElementById('progress');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
 const circles = document.querySelectorAll('.circle');
+const nav = document.querySelector('.nav');
+window.addEventListener('scroll', fixNav);
 
 
 let currentActive = 1;
@@ -13,7 +15,7 @@ next.addEventListener('click', ()=>{
 
     }
     update();
-    console.log(currentActive);
+    // console.log(currentActive);
 })
 
 prev.addEventListener('click', ()=>{
@@ -35,7 +37,10 @@ function update(){
     })
     
     const actives = document.querySelectorAll('.active');
-    progress.style.width = ((actives.length-1)/(circles.length-1))*100 +'%';
+    progress.style.width = ((actives.length-2)/(circles.length-1))*100 +'%';
+    console.log(actives.length-1)
+    console.log(circles.length-1)
+    console.log(((actives.length-1)/(circles.length))*100 +'%')
     if(currentActive === 1){
         prev.disabled =true;
     }
@@ -45,5 +50,15 @@ function update(){
     else{
         prev.disabled = false;
         next.disabled = false;
+    }
+}
+
+// Navigation bar js
+function fixNav() {
+    if(window.scrollY > nav.offsetHeight+150){
+        nav.classList.add('active');
+    }
+    else{
+        nav.classList.remove('active');
     }
 }
