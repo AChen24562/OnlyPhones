@@ -20,6 +20,15 @@
         </div>
     </nav>
 <!-- End of Navigation-->
+    <div class="phone-model-container">
+        <label for="phone-model-input">Enter your Phone Model:</label>
+        <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model">
+        <div id="suggestion-container" class="suggestion-box"style="display:none;"></div>
+    </div>
+    <div class="image_phone_container">
+        <img src="" alt="Image of phone chosen" id="phone-image" style="display:none;">
+    </div>
+
 
     <div class="progress-fixed-container">
         <div class="progress-div">
