@@ -9,7 +9,10 @@
 body{
     font-family: 'Muli', sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+
     height: 100vh;
     overflow: hidden;
     margin: 0;
@@ -158,9 +161,11 @@ nav ul {
     position: relative;
     justify-content: center;
     align-items: flex-start;
-    /* Adjust the height as needed */
     margin-top: 100px;
-    width:100%;
+    width: 50%;
+    transform: translateY(20px);
+
+
 }
 
 .phone-model-container label {
@@ -188,15 +193,14 @@ nav ul {
 }
 #suggestion-container {
     position: absolute;
-    top: 5%; /* This will place it right below the input field */
-    left: 34%; /* Align with the left edge of the input field */
-    width: 50%; /* Match the width of the input field */
+    top: 38px;
+    left: 0;
+    width: 100%;
     border: 1px solid #ddd;
-    z-index: 1;
     background: white;
     box-shadow: 0px 4px 5px rgba(0,0,0,0.2);
-    display: none; /* Only display when there are suggestions */
-
+    display: none;
+    z-index: 5;
 }
 
 #suggestion-container div {
@@ -207,3 +211,91 @@ nav ul {
 #suggestion-container div:hover {
     background-color: #f2f2f2;
 }
+
+/*Sell instructions*/
+.sell-instructions {
+    flex: 1;
+    background-color: #f6f7fb;
+    padding: 20px;
+    border-radius: 5px;
+    width: 30%;
+    margin-right: 20px;
+}
+
+.content-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    margin-top: 100px; /* Or adjust as necessary */
+    width: 100%; /* Use full width of the container */
+    max-width: 1000px; /* Or the max width you want for the content area */
+}
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+
+}
+.sell-instructions{
+    flex: 0 0 50%;
+}
+.sell-instructions p{
+    transition: 0.4s ease;
+}
+.sell-instructions > p {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.step-1, .step-2, .step-3 {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+.image_phone_container img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    padding-left: 0;
+    margin-left: 0;
+    padding-bottom: 100%;
+}
+.image_phone_container {
+    flex: 0 0 50%;
+    min-height: 600px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.step-1 {
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 0s;
+}
+
+.step-2 {
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 3s;
+}
+
+.step-3 {
+    animation: fadeIn 1s ease forwards;
+    animation-delay: 4s;
+}
+#phone-image {
+    opacity: 0;
+    transition: opacity 2s ease;
+    display: none;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transform: translateY(-20px);
+    /*box-shadow: gray 0px 0px 10px;*/
+
+}
+.image_phone_container img {
+    width: 600px;
+    height: 600px;
+    object-fit: contain;
+    display: block;
+}
+

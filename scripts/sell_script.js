@@ -7,7 +7,7 @@ const circles = document.querySelectorAll('.circle');
 const nav = document.querySelector('.nav');
 // Phone input js
 const phone_input = document.getElementById('phone-model-input');
-
+const suggestion_container = document.getElementById('suggestion-container');
 window.addEventListener('scroll', fixNav);
 
 
@@ -67,6 +67,7 @@ function fixNav() {
         nav.classList.remove('active');
     }
 }
+// End nav bar
 
 // Phone input js
 phone_map = {
@@ -74,36 +75,76 @@ phone_map = {
     "Apple": ["iPhone 15","iPhone 14","iPhone 13","iPhone 12", "iPhone 11", "iPhone X", "iPhone 8", "iPhone 7"],
     "Google": ["Pixel 5", "Pixel 4", "Pixel 3", "Pixel 2"]
 }
-function filterModels(input) {
-    let suggestions = phone_map['Apple'].filter(model => model.toLowerCase().includes(input.toLowerCase()));
-    displaySuggestions(suggestions);
+const phoneImages = {
+    'iPhone 15': '../images/phones/Apple/iphone_15.png',
+    'iPhone 14': '../images/phones/Apple/iphone_14.png',
 }
+function updatePhoneImage(model) {
+    const phoneImageElement = document.getElementById('phone-image');
+    const imageUrl = phoneImages[model];
 
-// Function to display the suggestions
-function displaySuggestions(suggestions) {
-    const suggestionContainer = document.getElementById('suggestion-container');
-    // Clear previous suggestions
-    suggestionContainer.innerHTML = '';
-    if (suggestions.length === 0) {
-        suggestionContainer.style.display = 'none';
-        return;
+    if (imageUrl) {
+        phoneImageElement.src = imageUrl;
+        phoneImageElement.style.display = 'block';
+
+        setTimeout( () =>{
+            phoneImageElement.style.opacity = 1;
+        })
+    } else {
+        phoneImageElement.style.opacity = 0;
+        setTimeout(() => {
+            phoneImageElement.style.display = 'none';
+        }, 400);
     }
-    // Create and append suggestions to the container
-    suggestions.forEach(model => {
-        let div = document.createElement('div');
-        div.innerHTML = model;
-        div.onclick = function() {
-            document.getElementById('phone-model-input').value = this.innerText;
-            suggestionContainer.style.display = 'none';
-        };
-        suggestionContainer.appendChild(div);
-    });
-    suggestionContainer.style.display = 'block';
 }
+phone_input.addEventListener('input', ()=>{
+    let input_val = phone_input.value.toLowerCase();
 
-// Close the suggestion container when the user clicks outside of it
+    suggestion_container.innerHTML = '';
+    suggestion_container.style.display = 'none';
+
+    if (input_val.length > 0) {
+        let suggestions = [];
+        suggestions = suggestions.concat(phone_map['Apple'].filter(model => model.toLowerCase().startsWith(input_val)));
+
+        if (suggestions.length > 0) {
+            suggestion_container.style.display = 'block';
+            suggestions.forEach(suggestion => {
+                let suggestionDiv = document.createElement('div');
+                suggestionDiv.textContent = suggestion;
+                suggestionDiv.addEventListener('click', function() {
+                    phone_input.value = suggestion;
+                    suggestion_container.innerHTML = '';
+                    suggestion_container.style.display = 'none'; 
+                });
+                suggestion_container.appendChild(suggestionDiv);
+            });
+        }
+        suggestion_container.addEventListener('click', function(event) {
+            const clickedElement = event.target;
+
+            if (clickedElement.tagName.toLowerCase() === 'div') {
+                const selectedModel = clickedElement.textContent;
+                phone_input.value = selectedModel;
+                suggestion_container.innerHTML = '';
+                suggestion_container.style.display = 'none';
+
+                updatePhoneImage(selectedModel);
+            }
+        });
+    }
+});
 window.onclick = function(event) {
     if (!event.target.matches('#phone-model-input')) {
         document.getElementById('suggestion-container').style.display = 'none';
     }
+};
+// End phone input
+window.onload = function() {
+    document.querySelector('.sell-instructions').style.opacity = "1";
+    document.querySelector('.sell-instructions > p').style.opacity = "1";
+    document.querySelector('.step-1').style.opacity = "1";
+    document.querySelector('.step-2').style.opacity = "1";
+    document.querySelector('.step-3').style.opacity = "1";
+    // document.querySelector('.image_phone_container').style.opacity = "1";
 };
