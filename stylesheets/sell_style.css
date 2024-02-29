@@ -249,7 +249,7 @@ nav ul {
 }
 .step-1, .step-2, .step-3 {
     opacity: 0;
-    transition: opacity 1s ease;
+    /*transition: opacity 1s ease;*/
 }
 .image_phone_container img {
     width: 100%;
@@ -268,18 +268,18 @@ nav ul {
 }
 
 .step-1 {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 0s;
+    transition: opacity 3s ease-in ;
+
 }
 
 .step-2 {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 3s;
+    transition: opacity 5s ease-in;
+
 }
 
 .step-3 {
-    animation: fadeIn 1s ease forwards;
-    animation-delay: 4s;
+    transition: opacity 6s ease-in;
+
 }
 #phone-image {
     opacity: 0;
