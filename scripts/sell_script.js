@@ -71,13 +71,24 @@ function fixNav() {
 
 // Phone input js
 phone_map = {
-    "Samsung": ["Galaxy S21", "Galaxy S20", "Galaxy S10", "Galaxy Note 20", "Galaxy Note 10"],
-    "Apple": ["iPhone 15","iPhone 14","iPhone 13","iPhone 12", "iPhone 11", "iPhone X", "iPhone 8", "iPhone 7"],
-    "Google": ["Pixel 5", "Pixel 4", "Pixel 3", "Pixel 2"]
+    "Samsung": ["Galaxy S24 Ultra", "Galaxy S23 Ultra", "Galaxy S22 Ultra", "Galaxy Z Fold 4", "Galaxy Z Fold 5"],
+    "Apple": ["iPhone 15","iPhone 14","iPhone 13","iPhone 12"],
+    "Google": ["Pixel 8","Pixel 7", "Pixel 6", "Pixel 5"]
 }
 const phoneImages = {
     'iPhone 15': '../images/phones/Apple/iphone_15.png',
     'iPhone 14': '../images/phones/Apple/iphone_14.png',
+    'iPhone 13': '../images/phones/Apple/iphone_13.png',
+    'iPhone 12': '../images/phones/Apple/iphone_12.png',
+    'Galaxy S24 Ultra': '../images/phones/Samsung/galaxy_S24_ultra.png',
+    'Galaxy S23 Ultra': '../images/phones/Samsung/galaxy_S23_ultra.png',
+    'Galaxy S22 Ultra': '../images/phones/Samsung/galaxy_S22_ultra.png',
+    'Galaxy Z Fold 4': '../images/phones/Samsung/galaxy_Zfold4.png',
+    'Galaxy Z Fold 5': '../images/phones/Samsung/galaxy_Zfold5.png',
+    'Pixel 8': '../images/phones/Google/pixel_8.png',
+    'Pixel 7': '../images/phones/Google/pixel_7.png',
+    'Pixel 6': '../images/phones/Google/pixel_6.png',
+    'Pixel 5': '../images/phones/Google/pixel_5.png'
 }
 function updatePhoneImage(model) {
     const phoneImageElement = document.getElementById('phone-image');
@@ -105,7 +116,7 @@ phone_input.addEventListener('input', ()=>{
 
     if (input_val.length > 0) {
         let suggestions = [];
-        suggestions = suggestions.concat(phone_map['Apple'].filter(model => model.toLowerCase().startsWith(input_val)));
+        suggestions = suggestions.concat(phone_map['Samsung'].filter(model => model.toLowerCase().startsWith(input_val)));
 
         if (suggestions.length > 0) {
             suggestion_container.style.display = 'block';
