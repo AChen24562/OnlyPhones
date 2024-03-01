@@ -8,82 +8,92 @@
 </head>
 <body>
 
-<!--Navigation-->
-<nav class="nav">
-    <div class="nav-container">
-        <h1 class="logo"><a href="homepage.html">Phone Center</a></h1>
-        <ul>
-            <li><a href="homepage.html" class="active">Home</a></li>
-            <li><a href="aboutPage.html">About</a></li>
-            <li><a href="sellPage.html">Sell</a></li>
-        </ul>
-    </div>
-</nav>
+<!--Naviation-->
+    <nav class="nav">
+        <div class="nav-container">
+            <h1 class="logo"><a href="homepage.html">Phone Center</a></h1>
+            <ul>
+                <li><a href="homepage.html" class="active">Home</a></li>
+                <li><a href="aboutPage.html">About</a></li>
+                <li><a href="sellPage.html">Sell</a></li>
+            </ul>
+        </div>
+    </nav>
 <!-- End of Navigation-->
-
-<div class="phone-model-container">
-    <label for="phone-model-input">Enter your Phone Model:</label>
-    <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model">
-    <div id="suggestion-container" class="suggestion-box" style="display:none;"></div>
-</div>
-
-<!-- Content Flex Container -->
-<div class="content-flex-container">
-    <!-- Sell Instructions -->
-    <div class="sell-instructions">
-        <h2>Sell your phone</h2>
-        <p>Easy as:</p>
-        <ol>
-            <li class="step-1">Your phone model</li>
-            <li class="step-2">Your phone's specs</li>
-            <li class="step-3">Your price</li>
-        </ol>
+    <div class="phone-model-container">
+        <label for="phone-model-input">Enter your Phone Model:</label>
+        <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model">
+        <div id="suggestion-container" class="suggestion-box"style="display:none;"></div>
     </div>
-
-    <!-- Image Phone Container -->
-    <div class="image_phone_container" style="display:none;">
-        <img src="" alt="Image of phone chosen" id="phone-image">
-    </div>
-
-    <!-- Phone Specifications -->
-    <div id="phone-specs" style="display: none;">
-        <h3>Select Phone Specifications</h3>
-        <div>
-            <label for="phone-capacity">Capacity:</label>
+    <div class="content-container">
+        <div class="sell-instructions">
+            <h2>Sell your phone</h2>
+            <p>Easy as:</p>
+            <ol>
+                <li class="step-1">Your phone model</li>
+                <li class="step-2">Your phone's specs</li>
+                <li class="step-3">Your price</li>
+            </ol>
+        </div>
+        <div class="multi-choice-container" style="display:none;">
+            <h3>Phone Details</h3>
+            <p>Select your phone's capacity:</p>
+            <!-- Example capacity options, update as needed -->
             <select id="phone-capacity">
                 <option value="64GB">64GB</option>
                 <option value="128GB">128GB</option>
                 <option value="256GB">256GB</option>
-                <!-- Add more options as needed -->
+                <option value="512GB">512GB</option>
+                <option value="1TB">1TB</option>
             </select>
-        </div>
-        <div>
-            <label for="phone-wear">Condition:</label>
+            <p>Select your phone's wear:</p>
+            <!-- Example wear options, update as needed -->
             <select id="phone-wear">
                 <option value="Like New">Like New</option>
                 <option value="Good">Good</option>
                 <option value="Fair">Fair</option>
-                <!-- Add more options as needed -->
             </select>
-        </div>
-    </div>
-</div>
-
-<div class="progress-fixed-container">
-    <div class="progress-div">
-        <div class="progress-outer-container">
-            <div class="progress-container">
-                <div class="progress" id="progress"></div>
-                <div class="circle active">1</div>
-                <div class="circle">2</div>
-                <div class="circle">3</div>
+            <p>Is your phone unlocked?</p>
+            <select id="phone-unlocked">
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+            </select>
+            <p>What company is it locked to?</p>
+            <div class="locked-company-container">
+                <button id="locked-company-verizon">Verizon</button>
+                <button id="locked-company-att">AT&T</button>
+                <button id="locked-company-tmobile">T-Mobile</button>
+                <button id="locked-company-none" style="display: none">None</button>
             </div>
-            <button class="btn" id="prev" disabled>Prev</button>
-            <button class="btn" id="next">Next</button>
+
+
+        </div>
+        <div class="main-content">
+            <div class="image_phone_container">
+                <img src="" alt="Image of phone chosen" id="phone-image" style="display:none;">
+            </div>
+
         </div>
     </div>
-</div>
 
-<script src="../scripts/sell_script.js"></script>
+
+
+    <div class="progress-fixed-container">
+        <div class="progress-div">
+            <div class="progress-outer-container">
+                <div class="progress-container">
+                    <div class="progress" id="progress"></div>
+                    <div class="circle active">1</div>
+                    <div class="circle">2</div>
+                    <div class="circle">3</div>
+                </div>
+                <button class="btn" id="prev" disabled>Prev</button>
+                <button class="btn" id="next">Next</button>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../scripts/sell_script.js"></script>
 </body>
 </html>

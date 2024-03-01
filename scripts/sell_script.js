@@ -43,24 +43,26 @@ function update(){
     
     const actives = document.querySelectorAll('.active');
     progress.style.width = ((actives.length-2)/(circles.length-1))*100 +'%';
+    if(currentActive === 2){
+        // Hide sell instructions and show multi-choice options
+        document.querySelector('.sell-instructions').style.display = 'none';
+        document.querySelector('.multi-choice-container').style.display = 'block';
 
+
+    } else {
+        document.querySelector('.sell-instructions').style.display = 'block';
+        document.querySelector('.multi-choice-container').style.display = 'none';
+    }
+
+    // Button enabling/disabling logic
     if(currentActive === 1){
+
         prev.disabled = true;
-        document.getElementById('phone-specs').style.display = 'none'; // Hide phone specs
-    }
-    else if(currentActive === 2){
-        document.getElementById('phone-specs').style.display = 'block'; // Show phone specs
-        prev.disabled = false;
-        next.disabled = false;
-    }
-    else if(currentActive === circles.length){
+    } else if(currentActive === circles.length){
         next.disabled = true;
-        document.getElementById('phone-specs').style.display = 'none'; // Hide phone specs in last step
-    }
-    else{
+    } else {
         prev.disabled = false;
         next.disabled = false;
-        document.getElementById('phone-specs').style.display = 'none'; // Ensure hidden in other steps
     }
 }
 
