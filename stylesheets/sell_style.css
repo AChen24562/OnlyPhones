@@ -299,3 +299,13 @@ nav ul {
     display: block;
 }
 
+/*Page 2*/
+#phone-specs{
+    margin-top: 20px;
+}
+#phone-specs h3{
+    margin-bottom: 15px;
+}
+#phone-specs div{
+    margin-bottom: 10px;
+}

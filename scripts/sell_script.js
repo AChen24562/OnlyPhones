@@ -43,18 +43,24 @@ function update(){
     
     const actives = document.querySelectorAll('.active');
     progress.style.width = ((actives.length-2)/(circles.length-1))*100 +'%';
-    console.log(actives.length-1)
-    console.log(circles.length-1)
-    console.log(((actives.length-1)/(circles.length))*100 +'%')
+
     if(currentActive === 1){
-        prev.disabled =true;
+        prev.disabled = true;
+        document.getElementById('phone-specs').style.display = 'none'; // Hide phone specs
+    }
+    else if(currentActive === 2){
+        document.getElementById('phone-specs').style.display = 'block'; // Show phone specs
+        prev.disabled = false;
+        next.disabled = false;
     }
     else if(currentActive === circles.length){
         next.disabled = true;
+        document.getElementById('phone-specs').style.display = 'none'; // Hide phone specs in last step
     }
     else{
         prev.disabled = false;
         next.disabled = false;
+        document.getElementById('phone-specs').style.display = 'none'; // Ensure hidden in other steps
     }
 }
 
@@ -116,7 +122,7 @@ phone_input.addEventListener('input', ()=>{
 
     if (input_val.length > 0) {
         let suggestions = [];
-        suggestions = suggestions.concat(phone_map['Samsung'].filter(model => model.toLowerCase().startsWith(input_val)));
+        suggestions = suggestions.concat(phone_map['Apple'].filter(model => model.toLowerCase().startsWith(input_val)));
 
         if (suggestions.length > 0) {
             suggestion_container.style.display = 'block';

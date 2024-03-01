@@ -8,58 +8,82 @@
 </head>
 <body>
 
-<!--Naviation-->
-    <nav class="nav">
-        <div class="nav-container">
-            <h1 class="logo"><a href="homepage.html">Phone Center</a></h1>
-            <ul>
-                <li><a href="homepage.html" class="active">Home</a></li>
-                <li><a href="aboutPage.html">About</a></li>
-                <li><a href="sellPage.html">Sell</a></li>
-            </ul>
-        </div>
-    </nav>
+<!--Navigation-->
+<nav class="nav">
+    <div class="nav-container">
+        <h1 class="logo"><a href="homepage.html">Phone Center</a></h1>
+        <ul>
+            <li><a href="homepage.html" class="active">Home</a></li>
+            <li><a href="aboutPage.html">About</a></li>
+            <li><a href="sellPage.html">Sell</a></li>
+        </ul>
+    </div>
+</nav>
 <!-- End of Navigation-->
-    <div class="phone-model-container">
-        <label for="phone-model-input">Enter your Phone Model:</label>
-        <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model">
-        <div id="suggestion-container" class="suggestion-box"style="display:none;"></div>
+
+<div class="phone-model-container">
+    <label for="phone-model-input">Enter your Phone Model:</label>
+    <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model">
+    <div id="suggestion-container" class="suggestion-box" style="display:none;"></div>
+</div>
+
+<!-- Content Flex Container -->
+<div class="content-flex-container">
+    <!-- Sell Instructions -->
+    <div class="sell-instructions">
+        <h2>Sell your phone</h2>
+        <p>Easy as:</p>
+        <ol>
+            <li class="step-1">Your phone model</li>
+            <li class="step-2">Your phone's specs</li>
+            <li class="step-3">Your price</li>
+        </ol>
     </div>
-    <div class="content-container">
-        <div class="sell-instructions">
-            <h2>Sell your phone</h2>
-            <p>Easy as:</p>
-            <ol>
-                <li class="step-1">Your phone model</li>
-                <li class="step-2">Your phone's specs</li>
-                <li class="step-3">Your price</li>
-            </ol>
+
+    <!-- Image Phone Container -->
+    <div class="image_phone_container" style="display:none;">
+        <img src="" alt="Image of phone chosen" id="phone-image">
+    </div>
+
+    <!-- Phone Specifications -->
+    <div id="phone-specs" style="display: none;">
+        <h3>Select Phone Specifications</h3>
+        <div>
+            <label for="phone-capacity">Capacity:</label>
+            <select id="phone-capacity">
+                <option value="64GB">64GB</option>
+                <option value="128GB">128GB</option>
+                <option value="256GB">256GB</option>
+                <!-- Add more options as needed -->
+            </select>
         </div>
-        <div class="main-content">
-            <div class="image_phone_container">
-                <img src="" alt="Image of phone chosen" id="phone-image" style="display:none;">
+        <div>
+            <label for="phone-wear">Condition:</label>
+            <select id="phone-wear">
+                <option value="Like New">Like New</option>
+                <option value="Good">Good</option>
+                <option value="Fair">Fair</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+    </div>
+</div>
+
+<div class="progress-fixed-container">
+    <div class="progress-div">
+        <div class="progress-outer-container">
+            <div class="progress-container">
+                <div class="progress" id="progress"></div>
+                <div class="circle active">1</div>
+                <div class="circle">2</div>
+                <div class="circle">3</div>
             </div>
+            <button class="btn" id="prev" disabled>Prev</button>
+            <button class="btn" id="next">Next</button>
         </div>
     </div>
+</div>
 
-
-
-    <div class="progress-fixed-container">
-        <div class="progress-div">
-            <div class="progress-outer-container">
-                <div class="progress-container">
-                    <div class="progress" id="progress"></div>
-                    <div class="circle active">1</div>
-                    <div class="circle">2</div>
-                    <div class="circle">3</div>
-                </div>
-                <button class="btn" id="prev" disabled>Prev</button>
-                <button class="btn" id="next">Next</button>
-            </div>
-        </div>
-    </div>
-
-
-    <script src="../scripts/sell_script.js"></script>
+<script src="../scripts/sell_script.js"></script>
 </body>
 </html>
