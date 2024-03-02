@@ -11,7 +11,7 @@
 <!--Naviation-->
     <nav class="nav">
         <div class="nav-container">
-            <h1 class="logo"><a href="homepage.html">Phone Center</a></h1>
+            <h1 class="logo"><a href="homepage.html">OnlyPhones</a></h1>
             <ul>
                 <li><a href="homepage.html" class="active">Home</a></li>
                 <li><a href="aboutPage.html">About</a></li>
@@ -22,7 +22,7 @@
 <!-- End of Navigation-->
     <div class="phone-model-container">
         <label for="phone-model-input">Enter your Phone Model:</label>
-        <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model">
+        <input type="text" id="phone-model-input" onkeyup="filterModels(this.value)" placeholder="Enter your Phone Model" required>
         <div id="suggestion-container" class="suggestion-box"style="display:none;"></div>
     </div>
     <div class="content-container">
@@ -58,8 +58,8 @@
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
             </select>
-            <p>What company is it locked to?</p>
-            <div class="locked-company-container">
+            <div class="locked-company-container" style="display: none">
+                <p>What company is it locked to?</p>
                 <button id="locked-company-verizon">Verizon</button>
                 <button id="locked-company-att">AT&T</button>
                 <button id="locked-company-tmobile">T-Mobile</button>
@@ -68,6 +68,21 @@
 
 
         </div>
+        <div class="price-container" style="display: none">
+            <div class="device-spec-container">
+                <h2>Your Device Specifications</h2>
+                <p id="phone-model-show"></p>
+                <p id="phone-capacity-show"></p>
+                <p id="phone-wear-show"></p>
+                <p id="phone-unlock-show"></p>
+                <p id="phone-lock-company-show"></p>
+            </div>
+
+
+            <h3>Price</h3>
+            <p>Enter your price:</p>
+            <input type="text" id="phone-price" placeholder="Enter your price">
+        </div>
         <div class="main-content">
             <div class="image_phone_container">
                 <img src="" alt="Image of phone chosen" id="phone-image" style="display:none;">
@@ -75,8 +90,6 @@
 
         </div>
     </div>
-
-
 
     <div class="progress-fixed-container">
         <div class="progress-div">
@@ -89,6 +102,7 @@
                 </div>
                 <button class="btn" id="prev" disabled>Prev</button>
                 <button class="btn" id="next">Next</button>
+                <button class="btn" id="submit" style="display: none">Submit</button>
             </div>
         </div>
     </div>

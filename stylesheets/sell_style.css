@@ -305,7 +305,7 @@ nav ul {
     object-fit: contain;
 }
 
-.sell-instructions, .multi-choice-container {
+.sell-instructions, .multi-choice-container, .price-container {
     width: 100%;
     max-width: 500px;
     margin: 0 auto;
@@ -320,32 +320,51 @@ nav ul {
 /*Locked company css*/
 /* Locked Company Buttons */
 .locked-company-container button {
-    background-color: #fff; /* White background */
-    border: 2px solid #ccc; /* Grey border */
-    color: #333; /* Dark text */
-    padding: 10px 20px; /* Padding around the text */
-    font-size: 16px; /* Size of the text */
-    margin: 10px 5px; /* Margin around the buttons */
-    cursor: pointer; /* Cursor indicates clickable item */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
-    border-radius: 4px; /* Rounded corners */
-    width: 150px; /* Fixed width */
-    text-align: center; /* Center the text */
+    background-color: #fff;
+    border: 2px solid #ccc;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    width: 150px;
+    text-align: center;
 }
 
 .locked-company-container button:hover {
-    border-color: #007bff; /* Blue border on hover */
-    color: #007bff; /* Blue text on hover */
+    border-color: #007bff;
+    color: #007bff;
 }
 
 .locked-company-container button:active, .locked-company-container button:focus {
-    background-color: #e7f3ff; /* Light blue background for active/focused button */
-    border-color: #007bff; /* Blue border for active/focused button */
-    outline: none; /* Remove outline */
+    background-color: #e7f3ff;
+    border-color: #007bff;
+    outline: none;
 }
 
-/* Adjust the specific style for the selected button if needed */
+
 .locked-company-container button.selected {
-    background-color: #007bff; /* Blue background for selected button */
-    color: #fff; /* White text for selected button */
+    background-color: #007bff;
+    color: #fff;
+}
+
+/*Third Page price css*/
+.device-spec-container p{
+    background-color: #fff;
+    border: 2px solid #ccc;
+    color: #333;
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    width: 150px;
+    text-align: center;
+}
+.device-spec-container p:hover {
+    border-color: #007bff;
+    color: #007bff;
 }

@@ -43,16 +43,26 @@ function update(){
     
     const actives = document.querySelectorAll('.active');
     progress.style.width = ((actives.length-2)/(circles.length-1))*100 +'%';
-    if(currentActive === 2){
+    if(currentActive === 1){
+        document.querySelector('.sell-instructions').style.display = 'block';
+        document.querySelector('.multi-choice-container').style.display = 'none';
+        document.querySelector('.price-container').style.display = 'none';
+    }
+    else if(currentActive === 2){
         // Hide sell instructions and show multi-choice options
         document.querySelector('.sell-instructions').style.display = 'none';
         document.querySelector('.multi-choice-container').style.display = 'block';
+        document.querySelector('.price-container').style.display = 'none';
 
+    } else if (currentActive === 3){
 
-    } else {
-        document.querySelector('.sell-instructions').style.display = 'block';
+        document.querySelector('.sell-instructions').style.display = 'none';
         document.querySelector('.multi-choice-container').style.display = 'none';
+        document.querySelector('.price-container').style.display = 'block';
+        updateDeviceSpecs();
+
     }
+
 
     // Button enabling/disabling logic
     if(currentActive === 1){
@@ -167,3 +177,44 @@ window.onload = function() {
     document.querySelector('.step-3').style.opacity = "1";
     // document.querySelector('.image_phone_container').style.opacity = "1";
 };
+
+const phone_unlocked = document.getElementById('phone-unlocked');
+const locked_company_container = document.querySelector('.locked-company-container');
+phone_unlocked.addEventListener('change', function() {
+    if (phone_unlocked.value === 'Yes') {
+        locked_company_container.style.display = 'none';
+    } else {
+        locked_company_container.style.display = 'block';
+    }
+});
+
+// Circle 3 js update cirlce 3's phone specs
+let lockedCompany = 'N/A';
+document.getElementById('locked-company-verizon').addEventListener('click', function() {
+    lockedCompany = 'Verizon';
+})
+document.getElementById('locked-company-tmobile').addEventListener('click', function() {
+    lockedCompany = 'T-Mobile';
+})
+document.getElementById('locked-company-att').addEventListener('click', function() {
+    lockedCompany = 'AT&T';
+})
+function updateDeviceSpecs(){
+    const model = document.getElementById('phone-model-input').value;
+    const capacity = document.getElementById('phone-capacity').value;
+    const wear = document.getElementById('phone-wear').value;
+    const unlocked = document.getElementById('phone-unlocked').value;
+    const lockedTo = unlocked === 'No' ? lockedCompany : 'N/A';
+
+    document.getElementById('phone-model-show').textContent = `Model: ${model}`;
+    document.getElementById('phone-capacity-show').textContent = `Capacity: ${capacity}`;
+    document.getElementById('phone-wear-show').textContent = `Condition: ${wear}`;
+    document.getElementById('phone-unlock-show').textContent = `Unlocked: ${unlocked}`;
+    if(unlocked === 'Yes'){
+        document.getElementById('phone-lock-company-show').style.display = 'none';
+    }
+    else{
+        document.getElementById('phone-lock-company-show').style.display = 'block';
+        document.getElementById('phone-lock-company-show').textContent = `Locked To: ${lockedTo}`;
+    }
+}
