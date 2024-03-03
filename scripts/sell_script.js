@@ -1,6 +1,7 @@
 const progress = document.getElementById('progress');
 const prev = document.getElementById('prev');
 const next = document.getElementById('next');
+const submit = document.getElementById('submit');
 const circles = document.querySelectorAll('.circle');
 
 // Navigation bar js
@@ -19,8 +20,33 @@ next.addEventListener('click', ()=>{
         currentActive = circles.length;
 
     }
-    update();
-    // console.log(currentActive);
+    if (next.textContent === 'Submit') {
+        // Submit form logic
+        // const model = document.getElementById('phone-model-input').value;
+        // const capacity = document.getElementById('phone-capacity').value;
+        // const wear = document.getElementById('phone-wear').value;
+        // const unlocked = document.getElementById('phone-unlocked').value;
+        // const lockedTo = unlocked === 'No' ? lockedCompany : 'N/A';
+        // const price = document.getElementById('price').value;
+        // const form = document.getElementById('sell-form');
+        // const formData = new FormData(form);
+        // const data = {
+        //     model: model,
+        //     capacity: capacity,
+        //     wear: wear,
+        //     unlocked: unlocked,
+        //     lockedTo: lockedTo,
+        //     price: price
+        // }
+
+        // Currently just go back to homepage
+        window.location.href = '../pages/homepage.html';
+    }
+    else{
+        update();
+    }
+
+    // Submit form logic
 })
 
 prev.addEventListener('click', ()=>{
@@ -40,19 +66,21 @@ function update(){
             circle.classList.remove('active');
         }
     })
-    
+
     const actives = document.querySelectorAll('.active');
     progress.style.width = ((actives.length-2)/(circles.length-1))*100 +'%';
     if(currentActive === 1){
         document.querySelector('.sell-instructions').style.display = 'block';
         document.querySelector('.multi-choice-container').style.display = 'none';
         document.querySelector('.price-container').style.display = 'none';
+
     }
     else if(currentActive === 2){
         // Hide sell instructions and show multi-choice options
         document.querySelector('.sell-instructions').style.display = 'none';
         document.querySelector('.multi-choice-container').style.display = 'block';
         document.querySelector('.price-container').style.display = 'none';
+        next.textContent = 'Next';
 
     } else if (currentActive === 3){
 
@@ -60,17 +88,17 @@ function update(){
         document.querySelector('.multi-choice-container').style.display = 'none';
         document.querySelector('.price-container').style.display = 'block';
         updateDeviceSpecs();
-
+        next.textContent = 'Submit';
     }
-
-
     // Button enabling/disabling logic
     if(currentActive === 1){
 
         prev.disabled = true;
-    } else if(currentActive === circles.length){
-        next.disabled = true;
-    } else {
+    }
+    // else if(currentActive === circles.length){
+    //     next.disabled = true;
+    // }
+    else {
         prev.disabled = false;
         next.disabled = false;
     }
@@ -218,3 +246,4 @@ function updateDeviceSpecs(){
         document.getElementById('phone-lock-company-show').textContent = `Locked To: ${lockedTo}`;
     }
 }
+
