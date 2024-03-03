@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 /**{*/
 /*    box-sizing: border-box;*/
@@ -8,7 +8,7 @@
 /*}*/
 
 body{
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Muli', sans-serif;
     color: #222;
     padding-top: 70px;
     padding-bottom: 50px;
@@ -28,8 +28,6 @@ body{
 
 
 /*Navigation*/
-
-
 .nav{
     position: fixed;
     background-color: #222;
@@ -73,4 +71,18 @@ nav ul {
 .nav a.current, .nav a:hover{
     color: lightblue;
     font-weight: bold;
+}
+
+/*FAQ Section*/
+.faq-body{
+    background-color: #f0f0f0;
+}
+.faq-h1{
+    margin: 50px 0 30px;
+    text-align: center;
+}
+.faq-container{
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
