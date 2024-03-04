@@ -135,7 +135,7 @@ nav ul {
 
 }
 .about.active::before, .about.active::after{
-    content: '\f075';
+    content: '\f007';
     font-family: 'Font Awesome 5 Free';
     color: #2ecc71;
     font-size: 7rem;
