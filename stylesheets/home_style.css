@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 /**{*/
 /*    box-sizing: border-box;*/
@@ -7,11 +7,23 @@
 /*    */
 /*}*/
 
-body{
-    font-family: 'Open Sans', sans-serif;
-    color: #222;
-    padding-bottom: 50px
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
 }
+
+
+body{
+    font-family: 'Muli', sans-serif;
+    color: #222;
+    padding-bottom: 50px;
+    margin: 0;
+}
+
+
+
 .nav-container{
     max-width: 1200px;
     margin: 0 auto;
@@ -30,6 +42,9 @@ body{
     position: relative;
     margin-bottom: 20px;
     z-index: -2;
+    width: 100vw;
+    box-sizing: border-box;
+
 }
 
 .hero::before{
