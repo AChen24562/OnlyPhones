@@ -7,12 +7,18 @@
 /*    */
 /*}*/
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
 body{
     font-family: 'Muli', sans-serif;
     color: #222;
     padding-top: 70px;
     padding-bottom: 50px;
     background-color: #f6f7fb;
+    margin: 0;
 }
 .nav-container{
     max-width: 1200px;
@@ -77,27 +83,41 @@ nav ul {
 /*FAQ Section*/
 .faq-body{
     /*background-color: #f0f0f0;*/
+    background-image: url('../images/background_images/FAQ_About_background.png');
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    padding-top: 70px;
+    padding-bottom: 50px;
+    height: calc(100vh - 70px);
+    width: 100%;
+
 }
-.faq-h1{
+.faq-h1, .about-h1{
     margin: 50px 0 30px;
     text-align: center;
+    color: white;
+    font-size: 2.5rem;
 }
-.faq-container{
-    max-width: 600px;
+.faq-container, .about-container{
+    max-width: 1000px;
     margin: 0 auto;
 }
-.faq{
-    background-color: transparent;
+
+.faq, .about{
+    background-color: rgba(255, 255, 255, 0.55);
     border: 1px solid #9fa4a8;
     border-radius: 10px;
     margin: 20px 0;
     padding: 30px;
     position: relative;
     overflow: hidden;
-    transition: 0.3s ease;
+    transition: 1s ease;
 }
 
-.faq.active{
+.faq.active , .about.active{
     background-color: #fff;
     box-shadow:0 3px 6px rgba(0,0,0,0.1),
     0 3px 6px rgba(0,0,0,0.1)
@@ -114,24 +134,35 @@ nav ul {
     z-index: 0;
 
 }
-.faq.active::before{
+.about.active::before, .about.active::after{
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    color: #2ecc71;
+    font-size: 7rem;
+    position: absolute;
+    opacity: 0.2;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+}
+.faq.active::before, .about.active::before{
     color: #3498db;
     top: -10px;
     left: -30px;
     transform: rotateY(180deg);
 }
-.faq-title{
+.faq-title, .about-title{
     margin: 0 35px 0 0;
 }
-.faq-text{
+.faq-text, .about-text{
     display: none;
     margin:30px 0 0;
 }
-.faq.active .faq-text{
+.faq.active .faq-text, .about.active .about-text{
     display: block;
 }
-.faq-toggle{
-    background-color: transparent;
+.faq-toggle, .about-toggle{
+    /*background-color: transparent;*/
     border: 0;
     border-radius: 50%;
     cursor: pointer;
@@ -147,21 +178,23 @@ nav ul {
     width: 30px;
 }
 
-.faq-toggle:focus{
+.faq-toggle:focus, .about-toggle:focus{
     outline: none;
 }
 
-.faq-toggle .fa-times{
+.faq-toggle .fa-times, .about-toggle .fa-times{
     display: none;
 }
-.faq.active .faq-toggle .fa-times{
+.faq.active .faq-toggle .fa-times, .about.active .about-toggle .fa-times{
     color: #fff;
     display: block;
 }
-.faq.active .faq-toggle .fa-chevron-down{
+.faq.active .faq-toggle .fa-chevron-down, .about.active .about-toggle .fa-chevron-down{
     display: none;
 }
-.faq.active .faq-toggle{
+.faq.active .faq-toggle, .about.active .about-toggle, .about.active .about-toggle{
     background-color: #9fa4a8;
 
 }
+
+/*about css f3ed*/
