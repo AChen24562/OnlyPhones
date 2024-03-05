@@ -1,28 +1,41 @@
 const nav = document.querySelector('.nav');
 window.addEventListener('scroll', fixNav);
 
-// FAQ and About Buttons
-const toggles = document.querySelectorAll('.faq-toggle');
-const abouts = document.querySelectorAll('.about-toggle');
+// Nav
 
-toggles.forEach(toggle =>{
-    toggle.addEventListener('click', () => {
-        toggle.parentNode.classList.toggle('active');
-    })
-})
+// FAQ and About Containers
+const faqContainers = document.querySelectorAll('.faq');
+const aboutContainers = document.querySelectorAll('.about');
 
-abouts.forEach(toggle =>{
-    toggle.addEventListener('click', () => {
-        toggle.parentNode.classList.toggle('active');
+faqContainers.forEach(container => {
+    container.addEventListener('click', () => {
+        container.classList.toggle('active');
     })
-})
+});
+
+aboutContainers.forEach(container => {
+    container.addEventListener('click', () => {
+        container.classList.toggle('active');
+    })
+});
 
 function fixNav() {
-    if(window.scrollY > nav.offsetHeight){
+    if(window.scrollY > nav.offsetHeight + 50){
         nav.classList.add('active');
-    }
-    else{
+    } else {
         nav.classList.remove('active');
     }
 }
 
+// Prevents the original faq-toggle and about-toggle from interfering
+toggles.forEach(toggle => {
+    toggle.addEventListener('click', (e) => {
+        e.stopPropagation(); // Stops the click from propagating to the parent container
+    });
+});
+
+abouts.forEach(about => {
+    about.addEventListener('click', (e) => {
+        e.stopPropagation(); // Stops the click from propagating to the parent container
+    });
+});

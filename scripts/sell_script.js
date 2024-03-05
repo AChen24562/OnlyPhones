@@ -21,33 +21,43 @@ next.addEventListener('click', ()=>{
 
     }
     if (next.textContent === 'Submit') {
-        // Submit form logic
-        // const model = document.getElementById('phone-model-input').value;
-        // const capacity = document.getElementById('phone-capacity').value;
-        // const wear = document.getElementById('phone-wear').value;
-        // const unlocked = document.getElementById('phone-unlocked').value;
-        // const lockedTo = unlocked === 'No' ? lockedCompany : 'N/A';
-        // const price = document.getElementById('price').value;
-        // const form = document.getElementById('sell-form');
-        // const formData = new FormData(form);
-        // const data = {
-        //     model: model,
-        //     capacity: capacity,
-        //     wear: wear,
-        //     unlocked: unlocked,
-        //     lockedTo: lockedTo,
-        //     price: price
-        // }
+        const data = {
+            phone_model: document.getElementById('phone-model-input').value,
+            capacity: document.getElementById('phone-capacity').value,
+            wear: document.getElementById('phone-wear').value,
+            unlocked: document.getElementById('phone-unlocked').value,
+            carrier_locked: document.getElementById('phone-unlocked').value === 'No' ? lockedCompany : 'N/A',
+            price: document.getElementById('phone-price').value
+        };
+        console.log("Submitting data: ", data);
+        // Send the data to the server using fetch API
+        fetch('http://54.160.154.98:5000/submit', { // Server IP hosted on AWS
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log('Success:', data);
+                window.location.href = '../pages/homepage.html';
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                // if failed sending
+            });
 
-        // Currently just go back to homepage
-        window.location.href = '../pages/homepage.html';
-    }
-    else{
+        event.preventDefault();
+    } else {
         update();
     }
-
-    // Submit form logic
-})
+});
 
 prev.addEventListener('click', ()=>{
     currentActive --;
