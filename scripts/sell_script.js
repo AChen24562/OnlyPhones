@@ -21,12 +21,16 @@ next.addEventListener('click', ()=>{
 
     }
     if (next.textContent === 'Submit') {
+        let unlocked = document.getElementById('phone-unlocked').value;
+        unlocked === 'No' ? unlocked = false: unlocked = true;
+        let carrier_lock = unlocked === false ? document.getElementById('phone-lock-company-show').textContent.split(' ')[2] : 'N/A';
         const data = {
+            user: 'test_user',
             phone_model: document.getElementById('phone-model-input').value,
             capacity: document.getElementById('phone-capacity').value,
             wear: document.getElementById('phone-wear').value,
-            unlocked: document.getElementById('phone-unlocked').value,
-            carrier_locked: document.getElementById('phone-unlocked').value === 'No' ? lockedCompany : 'N/A',
+            unlocked: unlocked,
+            carrier_lock: carrier_lock,
             price: document.getElementById('phone-price').value
         };
         console.log("Submitting data: ", data);
