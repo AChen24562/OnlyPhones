@@ -161,7 +161,7 @@ nav ul {
     position: relative;
     justify-content: center;
     align-items: flex-start;
-    margin-top: 100px;
+    margin-top: 0;
     width: 50%;
     transform: translateY(20px);
 
@@ -367,4 +367,16 @@ nav ul {
 .device-spec-container p:hover {
     border-color: #007bff;
     color: #007bff;
+}
+
+/*Phone Company Radios*/
+.company-radio-buttons{
+    margin-top: 100px;
+    margin-bottom: 0;
+}
+.company-radio-buttons label{
+    margin-right: 10px;
+}
+.company-radio-buttons input[type="radio"] {
+    margin-right: 5px; /* Spacing before the label text */
 }

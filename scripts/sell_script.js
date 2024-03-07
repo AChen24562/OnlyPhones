@@ -14,6 +14,8 @@ window.addEventListener('scroll', fixNav);
 
 let currentActive = 1;
 
+// Navigation bar js
+
 next.addEventListener('click', ()=>{
     currentActive ++;
     if(currentActive > circles.length){
@@ -34,6 +36,8 @@ next.addEventListener('click', ()=>{
             price: document.getElementById('phone-price').value
         };
         console.log("Submitting data: ", data);
+
+        // DB Logic
         // Send the data to the server using fetch API
         fetch('http://54.160.154.98:5000/submit', { // Server IP hosted on AWS
             method: 'POST',
@@ -56,7 +60,7 @@ next.addEventListener('click', ()=>{
                 console.error('Error:', error);
                 // if failed sending
             });
-
+        // End db logic
         event.preventDefault();
     } else {
         update();
@@ -118,7 +122,7 @@ function update(){
     }
 }
 
-// Navigation bar js
+
 function fixNav() {
     if(window.scrollY > nav.offsetHeight+150){
         nav.classList.add('active');
@@ -150,6 +154,50 @@ const phoneImages = {
     'Pixel 6': '../images/phones/Google/pixel_6.png',
     'Pixel 5': '../images/phones/Google/pixel_5.png'
 }
+
+
+let selectedCompany = 'Apple';
+// Radio button event listener
+document.querySelectorAll('input[name="company"]').forEach(radio => {
+    radio.addEventListener('change', function() {
+        selectedCompany = this.value;
+        updateSuggestions(phone_input.value);
+    });
+});
+
+// Phone model input
+phone_input.addEventListener('input', function() {
+    updateSuggestions(this.value);
+});
+
+// Suggestion container
+function updateSuggestions(inputVal) {
+    suggestion_container.innerHTML = '';
+    suggestion_container.style.display = 'none';
+
+    if (!inputVal) return;
+
+    let suggestions = phone_map[selectedCompany]?.filter(model =>
+        model.toLowerCase().startsWith(inputVal.toLowerCase())
+        );
+
+    // Display suggestions
+    if (suggestions.length > 0) {
+        suggestion_container.style.display = 'block';
+        suggestions.forEach(suggestion => {
+            let suggestionDiv = document.createElement('div');
+            suggestionDiv.textContent = suggestion;
+            suggestionDiv.addEventListener('click', function() {
+                phone_input.value = suggestion;
+                suggestion_container.innerHTML = '';
+                suggestion_container.style.display = 'none';
+                updatePhoneImage(suggestion);
+            });
+            suggestion_container.appendChild(suggestionDiv);
+        });
+    }
+}
+
 function updatePhoneImage(model) {
     const phoneImageElement = document.getElementById('phone-image');
     const imageUrl = phoneImages[model];
@@ -168,57 +216,6 @@ function updatePhoneImage(model) {
         }, 400);
     }
 }
-phone_input.addEventListener('input', ()=>{
-    let input_val = phone_input.value.toLowerCase();
-
-    suggestion_container.innerHTML = '';
-    suggestion_container.style.display = 'none';
-
-    if (input_val.length > 0) {
-        let suggestions = [];
-        suggestions = suggestions.concat(phone_map['Apple'].filter(model => model.toLowerCase().startsWith(input_val)));
-
-        if (suggestions.length > 0) {
-            suggestion_container.style.display = 'block';
-            suggestions.forEach(suggestion => {
-                let suggestionDiv = document.createElement('div');
-                suggestionDiv.textContent = suggestion;
-                suggestionDiv.addEventListener('click', function() {
-                    phone_input.value = suggestion;
-                    suggestion_container.innerHTML = '';
-                    suggestion_container.style.display = 'none'; 
-                });
-                suggestion_container.appendChild(suggestionDiv);
-            });
-        }
-        suggestion_container.addEventListener('click', function(event) {
-            const clickedElement = event.target;
-
-            if (clickedElement.tagName.toLowerCase() === 'div') {
-                const selectedModel = clickedElement.textContent;
-                phone_input.value = selectedModel;
-                suggestion_container.innerHTML = '';
-                suggestion_container.style.display = 'none';
-
-                updatePhoneImage(selectedModel);
-            }
-        });
-    }
-});
-window.onclick = function(event) {
-    if (!event.target.matches('#phone-model-input')) {
-        document.getElementById('suggestion-container').style.display = 'none';
-    }
-};
-// End phone input
-window.onload = function() {
-    document.querySelector('.sell-instructions').style.opacity = "1";
-    document.querySelector('.sell-instructions > p').style.opacity = "1";
-    document.querySelector('.step-1').style.opacity = "1";
-    document.querySelector('.step-2').style.opacity = "1";
-    document.querySelector('.step-3').style.opacity = "1";
-    // document.querySelector('.image_phone_container').style.opacity = "1";
-};
 
 const phone_unlocked = document.getElementById('phone-unlocked');
 const locked_company_container = document.querySelector('.locked-company-container');
@@ -241,6 +238,8 @@ document.getElementById('locked-company-tmobile').addEventListener('click', func
 document.getElementById('locked-company-att').addEventListener('click', function() {
     lockedCompany = 'AT&T';
 })
+
+// End phone input
 function updateDeviceSpecs(){
     const model = document.getElementById('phone-model-input').value;
     const capacity = document.getElementById('phone-capacity').value;
@@ -261,3 +260,17 @@ function updateDeviceSpecs(){
     }
 }
 
+window.onclick = function(event) {
+    if (!event.target.matches('#phone-model-input')) {
+        document.getElementById('suggestion-container').style.display = 'none';
+    }
+};
+
+window.onload = function() {
+    document.querySelector('.sell-instructions').style.opacity = "1";
+    document.querySelector('.sell-instructions > p').style.opacity = "1";
+    document.querySelector('.step-1').style.opacity = "1";
+    document.querySelector('.step-2').style.opacity = "1";
+    document.querySelector('.step-3').style.opacity = "1";
+    // document.querySelector('.image_phone_container').style.opacity = "1";
+};
