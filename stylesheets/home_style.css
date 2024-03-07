@@ -29,7 +29,7 @@ body{
 }
 .hero{
     /*TODO Replace image*/
-    background-image: url('https://www.bcj.com/wp-content/uploads/2016/12/AppleFifth_PAaron_Main-1-e1628739089161.jpg');
+    background-image: url('../images/background_images/HomeImage_AppleStore.jpeg');
     height: 100vh;
     background-repeat: no-repeat;
     background-size: cover;
@@ -116,4 +116,58 @@ nav ul {
 .nav a.current, .nav a:hover{
     color: lightblue;
     font-weight: bold;
+}
+
+/*Contact Us container */
+.contact-us-container {
+    background-color: #f2f2f2;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.contact-us-h1 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contact-us-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-us-form label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.contact-us-form input[type="text"],
+.contact-us-form input[type="email"],
+.contact-us-form textarea {
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+}
+
+.contact-us-form textarea {
+    resize: vertical;
+    height: 150px;
+}
+
+.contact-us-form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+.contact-us-form input[type="submit"]:hover {
+    background-color: #0056b3;
 }

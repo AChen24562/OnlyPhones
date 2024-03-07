@@ -9,8 +9,6 @@
 <body>
 
 <!--Naviation-->
-
-
     <nav class="nav">
                 <div class="nav-container">
                     <h1 class="logo"><a href="homepage.html">OnlyPhones</a></h1>
@@ -23,6 +21,8 @@
                 </div>
     </nav>
 <!-- End of Navigation-->
+
+
     <div class="hero">
         <div class="nav-container">
             <h1>
@@ -50,7 +50,26 @@
 
 
         </p>
+        <div class="contact-us-container">
+            <h1 class="contact-us-h1">Contact Us</h1>
+            <form action="" class="contact-us-form">
+                <label for="full-name">Full Name: </label>
+                <input type="text" id="full-name" class="full-name" name="full-name" placeholder="e.g. John Smith">
+
+                <label for="email">Email: </label>
+                <input type="email" id="email" class="email" name="email" placeholder="e.g. john.smith@example.com">
+
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" class="subject" name="subject" placeholder="e.g. Question about your services">
+
+                <label for="contact-us-text">Please Elaborate</label>
+                <textarea id="contact-us-text" rows = 50 cols = 50></textarea>
+
+                <input type="submit" value="Submit">
+            </form>
+        </div>
     </section>
+
 
 <script src="../scripts/home_script.js"></script>
 </body>
