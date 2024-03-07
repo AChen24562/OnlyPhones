@@ -188,6 +188,7 @@ nav ul {
     cursor: pointer;
     background-color: #f0f0f0;
     border-bottom: 1px solid #ddd;
+    z-index: 5;
 }
 
 .suggestion-bar div:hover {
@@ -209,6 +210,7 @@ nav ul {
 #suggestion-container div {
     padding: 10px;
     cursor: pointer;
+    z-index: 5;
 }
 
 #suggestion-container div:hover {
@@ -296,6 +298,7 @@ nav ul {
     object-fit: contain;
     transform: translateY(-20px);
     /*box-shadow: gray 0px 0px 10px;*/
+    z-index: -1;
 
 }
 .image_phone_container img {

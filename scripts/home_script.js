@@ -13,17 +13,31 @@ function fixNav() {
 const textElement = document.getElementById('autotext-container');
 const text = 'Find A New Home For Your Phone!';
 const speed = 60;
+const spanStart = text.indexOf('New');
+const spanEnd = text.indexOf(' For');
 
 let index = 1;
 
 writeText();
 
 function writeText() {
-    textElement.innerText = text.slice(0, index);
+    let autoText = text.slice(0, index);
+    if (index >= spanEnd) {
+        let first = autoText.slice(0,spanStart);
+        let middle = autoText.slice(spanStart, spanStart+ spanEnd-spanStart);
+        let last = autoText.slice(spanEnd);
+        autoText = first + "<span>" + middle + "</span>" + last;
+    } else if (index >= spanStart) {
+        let first = autoText.slice(0,spanStart);
+        let last = autoText.slice(spanStart);
+        autoText = first + "<span>" + last + "</span>";
+    }
+    textElement.innerHTML = autoText;
+
 
     index++;
 
     if (index <= text.length) {
-        setTimeout(writeText, speed);  
+        setTimeout(writeText, speed);
     }
 }
