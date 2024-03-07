@@ -9,3 +9,21 @@ function fixNav() {
         nav.classList.remove('active');
     }
 }
+
+const textElement = document.getElementById('autotext-container');
+const text = 'Find A New Home For Your Phone!';
+const speed = 60;
+
+let index = 1;
+
+writeText();
+
+function writeText() {
+    textElement.innerText = text.slice(0, index);
+
+    index++;
+
+    if (index <= text.length) {
+        setTimeout(writeText, speed);  
+    }
+}

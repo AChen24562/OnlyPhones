@@ -171,3 +171,8 @@ nav ul {
 .contact-us-form input[type="submit"]:hover {
     background-color: #0056b3;
 }
+
+#autotext-container {
+    font-style: italic;
+    font-size: 22px;
+}

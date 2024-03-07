@@ -17,6 +17,7 @@ body{
     overflow: hidden;
     margin: 0;
     background-color: #f6f7fb;
+    overflow-y: auto;
 }
 .progress-outer-container{
     text-align: center;
@@ -24,13 +25,15 @@ body{
 
 /* Progress bar*/
 .progress-fixed-container {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: center;
+
     padding: 20px 0;
+    /*margin-top: 200px;*/
 }
 
 .progress-container{
@@ -115,6 +118,7 @@ body{
     left: 0;
     right:0;
     transition: all 0.3s ease-in-out;
+    z-index: 5;
 
 }
 .nav .nav-container{
@@ -164,7 +168,6 @@ nav ul {
     margin-top: 0;
     width: 50%;
     transform: translateY(20px);
-
 
 }
 
