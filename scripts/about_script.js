@@ -27,15 +27,15 @@ function fixNav() {
     }
 }
 
-// Prevents the original faq-toggle and about-toggle from interfering
+
 toggles.forEach(toggle => {
     toggle.addEventListener('click', (e) => {
-        e.stopPropagation(); // Stops the click from propagating to the parent container
+        e.stopPropagation();
     });
 });
 
 abouts.forEach(about => {
     about.addEventListener('click', (e) => {
-        e.stopPropagation(); // Stops the click from propagating to the parent container
+        e.stopPropagation();
     });
 });

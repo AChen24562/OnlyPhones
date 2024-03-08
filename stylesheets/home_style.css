@@ -114,7 +114,7 @@ body, html {
     justify-content: center;
     background: gray;
     color: black;
-    width: 288.75px;
+    max-width: 95vw;
     height: 335px;
     border-radius: 10px;
     background-size: cover;
@@ -126,13 +126,6 @@ body, html {
     max-height: 100%;
     height: auto;
 }
-
-/*!* does not work *!*/
-/*.row1 div {*/
-/*    background-size: cover;*/
-/*    background-position: center;*/
-/*    background-repeat: no-repeat;*/
-/*}*/
 
 .listings {
     margin-bottom: 125px;
@@ -242,9 +235,6 @@ footer {
     margin-bottom: 70px;
 }
 
-.nav-links a {
-    color: #4980ff;
-}
 
 /*Contact Us container */
 .contact-us-container {
@@ -305,8 +295,11 @@ footer {
 /* Expanding Cards */
 .expanding-container {
     display: flex;
-    width: 95vw;
-    padding-top: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 60vw;
+    margin: 0 auto;
+
 }
 .panel {
     background-size: cover;

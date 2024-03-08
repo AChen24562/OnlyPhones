@@ -74,12 +74,12 @@ nav ul {
     display: flex;
     flex-wrap: wrap;
     justify-content: center; /* Center the items in the container */
-    align-items: stretch; /* Stretch the items to fill the container */
+    align-items: stretch;
 }
 
 .phone-container {
     display: flex;
-    width: calc(50% - 40px); /* Adjust width as needed with proper margin */
+    width: calc(50% - 40px);
     margin: 20px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
     margin-top: 50px;
@@ -91,7 +91,7 @@ nav ul {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    height: 400px; /* Set a fixed height */
+    height: 400px;
 }
 
 .phone-image {
