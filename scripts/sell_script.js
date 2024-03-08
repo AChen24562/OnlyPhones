@@ -60,8 +60,7 @@ next.addEventListener('click', ()=>{
                 console.error('Error:', error);
                 // if failed sending
             });
-        // End db logic
-        event.preventDefault();
+
     } else {
         update();
     }

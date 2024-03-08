@@ -1,5 +1,5 @@
 const nav = document.querySelector('.nav');
-window.addEventListener('scroll', fixNav);
+
 
 // Nav
 
@@ -19,23 +19,5 @@ aboutContainers.forEach(container => {
     })
 });
 
-function fixNav() {
-    if(window.scrollY > nav.offsetHeight + 50){
-        nav.classList.add('active');
-    } else {
-        nav.classList.remove('active');
-    }
-}
 
 
-toggles.forEach(toggle => {
-    toggle.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-});
-
-abouts.forEach(about => {
-    about.addEventListener('click', (e) => {
-        e.stopPropagation();
-    });
-});

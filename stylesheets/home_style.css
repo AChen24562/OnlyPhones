@@ -120,6 +120,9 @@ body, html {
     background-size: cover;
     transition: all 0.7s ease-in; /*TODO: doesn't work*/
 }
+.block:hover{
+    cursor: pointer;
+}
 
 .row1 img {
     max-width: 90%;
@@ -297,7 +300,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 60vw;
+    max-width: 85%;
     margin: 0 auto;
 
 }

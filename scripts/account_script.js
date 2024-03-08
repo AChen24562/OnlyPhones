@@ -52,7 +52,7 @@ function fetchAndDisplayPhones(){
                 specsBox.appendChild(createSpecDiv(`Capacity: ${phone.capacity}`));
                 specsBox.appendChild(createSpecDiv(`Wear: ${phone.wear}`));
                 specsBox.appendChild(createSpecDiv(`Unlocked: ${phone.unlocked ? 'Yes' : 'No'}`));
-                specsBox.appendChild(createSpecDiv(`Carrier Lock: ${phone.carrier_lock || 'N/A'}`));
+                specsBox.appendChild(createSpecDiv(`Carrier Lock: ${phone.carrier_lock}`));
                 specsBox.appendChild(createSpecDiv(`Price: ${phone.price}`));
 
                 phoneContainer.appendChild(imgBox);
