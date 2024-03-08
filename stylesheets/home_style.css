@@ -79,43 +79,6 @@ body, html {
     font-weight: bold;
 }
 
-/* Expanding Cards */
-.expanding-container {
-    display: flex;
-    width: 100vw;
-    padding-top: 20px;
-}
-.panel {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 80vh;
-    border-radius: 50px;
-    color: #fff;
-    cursor: pointer;
-    flex: 1;
-    margin: 10px;
-    position: relative;
-    transition: flex 0.7s ease-in;
-}
-.panel h3 {
-    font-size: 36px;
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    margin: 0;
-    opacity: 0;
-}
-
-.panel.active {
-    flex: 5;
-}
-
-.panel.active h3 {
-    opacity: 1;
-    transition: opacity 0.3s ease-in 0.3s;
-}
-
 /* Section 2 */
 .content {
     max-width: 1200px;
@@ -142,7 +105,7 @@ body, html {
     justify-content: center;
     column-gap: 15px;
     margin: auto;
-    max-width: 1200px;
+    max-width: 95vw;
 }
 
 .row1 .block {
@@ -154,7 +117,22 @@ body, html {
     width: 288.75px;
     height: 335px;
     border-radius: 10px;
+    background-size: cover;
+    transition: all 0.7s ease-in; /*TODO: doesn't work*/
 }
+
+.row1 img {
+    max-width: 90%;
+    max-height: 100%;
+    height: auto;
+}
+
+/*!* does not work *!*/
+/*.row1 div {*/
+/*    background-size: cover;*/
+/*    background-position: center;*/
+/*    background-repeat: no-repeat;*/
+/*}*/
 
 .listings {
     margin-bottom: 125px;
@@ -187,14 +165,6 @@ body, html {
 }
 
 
-/* Footer */
-footer {
-    height: 120px;
-    margin-top: 100px;
-    background-color: #0C111D;
-    color: white;
-    position: relative;
-}
 
 /*Nav bar:*/
 .nav {
@@ -245,13 +215,45 @@ nav ul {
     font-weight: bold;
 }
 
+/* Footer */
+footer {
+    height: auto;
+    margin-top: 100px;
+    width: 100vw;
+    right: 0;
+    background-color: #0C111D;
+    color: white;
+    position: absolute;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+
+/* Links and Info */
+.links-and-info {
+    text-align: center;
+    width: 20vw;
+    padding: 20px;
+    margin: 20px;
+}
+
+.nav-links {
+    margin-bottom: 70px;
+}
+
+.nav-links a {
+    color: #4980ff;
+}
+
 /*Contact Us container */
 .contact-us-container {
     background-color: #f2f2f2;
     padding: 20px;
-    margin-top: 20px;
+    margin: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    flex: 3
 }
 
 .contact-us-h1 {
@@ -262,6 +264,7 @@ nav ul {
 .contact-us-form {
     display: flex;
     flex-direction: column;
+    color: black;
 }
 
 .contact-us-form label {
@@ -277,7 +280,7 @@ nav ul {
     margin-bottom: 20px;
     border: 1px solid #ccc;
     border-radius: 4px;
-    width: 100%;
+    width: 95%;
 }
 
 .contact-us-form textarea {
@@ -299,7 +302,39 @@ nav ul {
     background-color: #0056b3;
 }
 
-/*#autotext-container > span {*/
-/*    font-style: italic;*/
-/*    font-size: 100px;*/
-/*}*/
+/* Expanding Cards */
+.expanding-container {
+    display: flex;
+    width: 95vw;
+    padding-top: 20px;
+}
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel h3 {
+    font-size: 36px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+}

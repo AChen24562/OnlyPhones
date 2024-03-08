@@ -22,7 +22,7 @@ function fetchAndDisplayPhones(){
     // await fetch(phoneDB)
     fetch(phoneDB)
         .then(response => response.json())
-        .then(data =>{
+        .then(data => {
 
             const phonesContainer = document.querySelector('.phone-display-container');
             phonesContainer.innerHTML = '';

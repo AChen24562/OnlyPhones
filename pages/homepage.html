@@ -22,6 +22,7 @@
     </nav>
     <!-- End of Navigation-->
 
+    <!-- Banner -->
     <section class="hero">
         <div class="container">
             <h1 id="autotext-container"><!--To be filled by Javascript. --> </h1>
@@ -32,25 +33,6 @@
         </div>
     </section>
 
-    <!--Expanding images/cards for Apple, Samsung, Google-->
-    <div class="expanding-container">
-        <div class="panel active" style="background-image: url('../images/background_images/HomeImage_AppleStore.jpeg')">
-            <h3>
-                Apple
-            </h3>
-        </div>
-        <div class="panel" style="background-image: url('../images/background_images/SamsungStore.jpg')">
-            <h3>
-                Samsung
-            </h3>
-        </div>
-        <div class="panel" style="background-image: url('../images/background_images/PixelPhones.jpeg')">
-            <h3>
-                Google
-            </h3>
-        </div>
-    </div>
-
     <section class="content">
         <div class="brands">
             <h2>
@@ -58,32 +40,51 @@
             </h2>
         </div>
 
+        <!--Expanding images/cards for Apple, Samsung, Google-->
+        <div class="expanding-container">
+            <div class="panel active" style="background-image: url('../images/background_images/HomeImage_AppleStore.jpeg')">
+                <h3>
+                    Apple
+                </h3>
+            </div>
+            <div class="panel" style="background-image: url('../images/background_images/SamsungStore.jpeg')">
+                <h3>
+                    Samsung
+                </h3>
+            </div>
+            <div class="panel" style="background-image: url('../images/background_images/PixelPhones.jpeg')">
+                <h3>
+                    Google
+                </h3>
+            </div>
+        </div>
+
         <div class="offers">
             <h2>
-                Special Offers
+                Recent Listings
             </h2>
             <h3>
                 Stay updated with the newest models at great prices.
             </h3>
             <div class="row1">
                 <!-- TODO: add images to blocks -->
-                <div class="block">
+                <div class="block branded">
                 </div>
 
-                <div class="block">
+                <div class="block branded">
                 </div>
 
-                <div class="block">
+                <div class="block branded">
                 </div>
 
-                <div class="block">
+                <div class="block branded">
                 </div>
             </div>
         </div>
 
         <div class="listings">
             <h2>
-                Recent Listings
+                Special Offers
             </h2>
             <h3>
                 <!-- TODO: change phrase -->
@@ -111,27 +112,40 @@
             <button >Shop Now</button>
         </div>
 
-        <div class="contact-us-container">
-            <h1 class="contact-us-h1">Contact Us</h1>
-            <form action="" class="contact-us-form">
-                <label for="full-name">Full Name: </label>
-                <input type="text" id="full-name" class="full-name" name="full-name" placeholder="e.g. John Smith">
+        <footer>
+            <div class="links-and-info">
+                <div class = "nav-links">
+                    <p><a href="homepage.html">Home</a></p>
+                    <p><a href="aboutPage.html">About</a></p>
+                    <p><a href="sellPage.html">Sell</a></p>
+                    <p><a href="accountPage.html">Account</a></p>
+                </div>
+                <h3>Made By:</h3>
+                <ul>
+                    <li>Alex Chen</li>
+                    <li>Jennifer Arceo</li>
+                    <li>Vadim Allayev</li>
+                </ul>
+            </div>
+            <div class="contact-us-container">
+                <h1 class="contact-us-h1">Contact Us</h1>
+                <form action="" class="contact-us-form">
+                    <label for="full-name">Full Name: </label>
+                    <input type="text" id="full-name" class="full-name" name="full-name" placeholder="e.g. John Smith">
 
-                <label for="email">Email: </label>
-                <input type="email" id="email" class="email" name="email" placeholder="e.g. john.smith@example.com">
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" class="email" name="email" placeholder="e.g. john.smith@example.com">
 
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" class="subject" name="subject" placeholder="e.g. Question about your services">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" class="subject" name="subject" placeholder="e.g. Question about your services">
 
-                <label for="contact-us-text">Please Elaborate</label>
-                <textarea id="contact-us-text" rows = 50 cols = 50></textarea>
+                    <label for="contact-us-text">Please Elaborate</label>
+                    <textarea id="contact-us-text" rows = 50 cols = 50></textarea>
 
-                <input type="submit" value="Submit">
-            </form>
-        </div>
-
-<!--        <footer>-->
-<!--        </footer>-->
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </footer>
     </section>
 
 <script src="../scripts/home_script.js"></script>
