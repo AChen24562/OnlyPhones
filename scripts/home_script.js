@@ -41,3 +41,18 @@ function writeText() {
         setTimeout(writeText, speed);
     }
 }
+
+const panels = document.querySelectorAll(".panel")
+
+panels.forEach((panel) => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses(0);
+        panel.classList.add('active');
+    })
+})
+
+function removeActiveClasses() {
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    })
+}

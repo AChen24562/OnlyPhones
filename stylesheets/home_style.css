@@ -79,6 +79,43 @@ body, html {
     font-weight: bold;
 }
 
+/* Expanding Cards */
+.expanding-container {
+    display: flex;
+    width: 100vw;
+    padding-top: 20px;
+}
+.panel {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 80vh;
+    border-radius: 50px;
+    color: #fff;
+    cursor: pointer;
+    flex: 1;
+    margin: 10px;
+    position: relative;
+    transition: flex 0.7s ease-in;
+}
+.panel h3 {
+    font-size: 36px;
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    opacity: 0;
+}
+
+.panel.active {
+    flex: 5;
+}
+
+.panel.active h3 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in 0.3s;
+}
+
 /* Section 2 */
 .content {
     max-width: 1200px;
