@@ -120,6 +120,9 @@ body, html {
     background-size: cover;
     transition: all 0.7s ease-in; /*TODO: doesn't work*/
 }
+.block:hover{
+    cursor: pointer;
+}
 
 .row1 img {
     max-width: 90%;
