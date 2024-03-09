@@ -70,6 +70,8 @@ const recentListings = [
 
 const staticImages = document.querySelectorAll(".branded")
 
+// Whenever you click on an expanding image, it will update these phone images to
+// match the brand of the presently expanded/focused brand.
 function updateStaticImages() {
     for (let i = 0; i < staticImages.length; i++) {
         staticImages[i].innerHTML = "<img src="+ recentListings[expanded][i] +">";
@@ -77,13 +79,3 @@ function updateStaticImages() {
 }
 
 updateStaticImages();
-
-// const img1 = document.getElementById("static1");
-// const img2 = document.getElementById("static2");
-// const img3 = document.getElementById("static3");
-// const img4 = document.getElementById("static4");
-//
-// img1.innerHTML = "<img src="+ recentListings[expanded][0] +">";
-// img2.innerHTML = "<img src="+ recentListings[expanded][1] +">";
-// img3.innerHTML = "<img src="+ recentListings[expanded][2] +">";
-// img4.innerHTML = "<img src="+ recentListings[expanded][3] +">";

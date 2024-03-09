@@ -16,12 +16,11 @@ body{
 }
 .nav{
     position: fixed;
-    background-color: #222;
+    background-color: #0C111D;
     top: 0;
     left: 0;
     right:0;
     transition: all 0.3s ease-in-out;
-
 }
 .nav .nav-container{
     display: flex;
@@ -29,6 +28,8 @@ body{
     align-items: center;
     padding: 10px 0;
     transition: all 0.3s ease-in-out;
+    max-width: 1230px;
+    margin: 0px auto;
 }
 
 nav ul {
