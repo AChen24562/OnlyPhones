@@ -113,3 +113,21 @@ nav ul {
 }
 
 /*End Phone Display*/
+
+/* Footer */
+footer {
+    position: absolute;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    background-color: #0C111D;
+    color: white;
+    align-items: center;
+}
+
+/* Links and Info */
+.links-and-info {
+    text-align: center;
+    width: auto;
+    padding: 20px;
+}

@@ -214,5 +214,22 @@ nav ul {
 }
 .faq.active .faq-toggle, .about.active .about-toggle, .about.active .about-toggle{
     background-color: #9fa4a8;
+}
 
+/* Footer */
+footer {
+    position: absolute;
+    right: 0;
+    height: auto;
+    width: 100vw;
+    background-color: #0C111D;
+    color: white;
+    align-items: center;
+}
+
+/* Links and Info */
+.links-and-info {
+    text-align: center;
+    width: auto;
+    padding: 20px;
 }
