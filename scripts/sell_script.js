@@ -15,6 +15,65 @@ window.addEventListener('scroll', fixNav);
 let currentActive = 1;
 
 // Navigation bar js
+let loginOrRegistered = false;
+const loginButton =document.getElementById('login-btn').addEventListener('click', loginUser);
+const registerButton = document.getElementById('register-btn').addEventListener('click', registerUser);
+
+
+// Login and Register
+function loginUser() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    fetch('http://54.160.154.98:5000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password}),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                console.log('Login successful');
+                alert('Login successful');
+                loginOrRegistered = true;
+            } else {
+                alert('Login failed');
+            }
+        })
+        .catch((error) => {
+            console.log('Error retrieving data: ', error);
+            alert('Server failed to respond. Please try again later.');
+        });
+}
+function registerUser() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value; // Hash this password in a real application
+
+    fetch('http://54.160.154.98:5000/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password}),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                console.log('Registration successful');
+                loginOrRegistered = true;
+                alert('Registration successful');
+            } else {
+                alert('Registration failed. Please try a different username.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+            alert('Server failed to respond. Please try again later.');
+        });
+}
+// End of login and register
 
 next.addEventListener('click', ()=>{
     currentActive ++;
@@ -23,44 +82,49 @@ next.addEventListener('click', ()=>{
 
     }
     if (next.textContent === 'Submit') {
-        let unlocked = document.getElementById('phone-unlocked').value;
-        unlocked === 'No' ? unlocked = false: unlocked = true;
-        let carrier_lock = unlocked === false ? document.getElementById('phone-lock-company-show').textContent.split(' ')[2] : 'N/A';
-        const data = {
-            user: 'test_user',
-            phone_model: document.getElementById('phone-model-input').value,
-            capacity: document.getElementById('phone-capacity').value,
-            wear: document.getElementById('phone-wear').value,
-            unlocked: unlocked,
-            carrier_lock: carrier_lock,
-            price: document.getElementById('phone-price').value
-        };
-        console.log("Submitting data: ", data);
+        if(loginOrRegistered === true) {
+            const username = document.getElementById('username').value;
+            let unlocked = document.getElementById('phone-unlocked').value;
+            unlocked === 'No' ? unlocked = false : unlocked = true;
+            let carrier_lock = unlocked === false ? document.getElementById('phone-lock-company-show').textContent.split(' ')[2] : 'N/A';
+            const data = {
+                user: document.getElementById('username').value,
+                phone_model: document.getElementById('phone-model-input').value,
+                capacity: document.getElementById('phone-capacity').value,
+                wear: document.getElementById('phone-wear').value,
+                unlocked: unlocked,
+                carrier_lock: carrier_lock,
+                price: document.getElementById('phone-price').value
+            };
+            console.log("Submitting data: ", data);
 
-        // DB Logic
-        // Send the data to the server using fetch API
-        fetch('http://54.160.154.98:5000/submit', { // Server IP hosted on AWS
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(data),
-        })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                return response.json();
+            // DB Logic
+            // Send the data to the server using fetch API
+            fetch('http://54.160.154.98:5000/submit', { // Server IP hosted on AWS
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
             })
-            .then(data => {
-                console.log('Success:', data);
-                window.location.href = '../pages/homepage.html';
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                // if failed sending
-            });
-
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log('Success:', data);
+                    alert("Success! Your phone has been put up for sale go to your account page to see your phones.");
+                    window.location.href = '../pages/homepage.html';
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                    // if failed sending
+                });
+        }else{
+            alert('Please login or register to submit');
+        }
     } else {
         update();
     }
@@ -273,3 +337,5 @@ window.onload = function() {
     document.querySelector('.step-3').style.opacity = "1";
     // document.querySelector('.image_phone_container').style.opacity = "1";
 };
+
+
