@@ -64,12 +64,12 @@ function removeActiveClasses() {
 // Apple -> 0, Samsung -> 1, Google -> 2
 const recentListings = [
     ['../images/phones/Apple/iphone_15.png','../images/phones/Apple/iphone_14.png','../images/phones/Apple/iphone_13.png','../images/phones/Apple/iphone_12.png'],
-    ['../images/phones/Samsung/galaxy_S24_ultra.png','../images/phones/Samsung/galaxy_S22_ultra.png','../images/phones/Samsung/galaxy_Zfold5.png','../images/phones/Samsung/galaxy_Zfold4.png'],
+    ['../images/phones/Samsung/galaxy_S24_ultra.png','../images/phones/Samsung/galaxy_S23_ultra.png','../images/phones/Samsung/galaxy_Zfold5.png','../images/phones/Samsung/galaxy_Zfold4.png'],
     ['../images/phones/Google/pixel_8.png','../images/phones/Google/pixel_7.png','../images/phones/Google/pixel_6.png','../images/phones/Google/pixel_5.png']
 ]
 const listingNames = [
     ['iPhone 15','iPhone 14','iPhone 13','iPhone 12'],
-    ['Galaxy S24 Ultra','Galaxy S22 Ultra','Galaxy Z Fold 5','Galaxy Z Fold 4'],
+    ['Galaxy S24 Ultra','Galaxy S23 Ultra','Galaxy Z Fold 5','Galaxy Z Fold 4'],
     ['Pixel 8','Pixel 7','Pixel 6','Pixel 5']
 ]
 

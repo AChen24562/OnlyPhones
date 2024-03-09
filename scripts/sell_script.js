@@ -116,7 +116,7 @@ next.addEventListener('click', ()=>{
                 .then(data => {
                     console.log('Success:', data);
                     alert("Success! Your phone has been put up for sale go to your account page to see your phones.");
-                    window.location.href = '../pages/homepage.html';
+                    window.location.href = '../pages/homePage.html';
                 })
                 .catch((error) => {
                     console.error('Error:', error);
