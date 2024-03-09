@@ -235,3 +235,48 @@ footer {
     width: auto;
     padding: 20px;
 }
+
+/* Price Table */
+.price-table {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+}
+
+.price-table table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.price-table th, .price-table td {
+    padding: 15px;
+    text-align: center;
+    border-bottom: 1px solid #fff;
+}
+
+.price-table th {
+    background-color: #f2f2f2;
+}
+
+/* make first box transparent */
+.price-table thead th:nth-child(1) {
+    background-color: rgb(0, 0, 0, 0);
+}
+
+.price-table tbody tr:nth-child(even) {
+    background-color: #9fa4a8;
+}
+.price-table tbody tr:nth-child(odd) {
+    background-color: #999;
+}
+.price-table tbody tr:hover {
+    background-color: #ddd;
+}
+.price-table tbody tr:hover td:last-child {
+    color:green;
+}
+.price-table tbody tr:hover td:nth-last-child(2) {
+    color:red;
+}
+
