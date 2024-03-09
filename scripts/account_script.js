@@ -1,7 +1,63 @@
+const loginButton =document.getElementById('login-btn').addEventListener('click', loginUser);
+const registerButton = document.getElementById('register-btn').addEventListener('click', registerUser);
+
+
+// Login and Register
+function loginUser() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value;
+
+    fetch('http://54.160.154.98:5000/login', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password}),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                console.log('Login successful');
+                document.querySelector('.login-container').style.display = 'none';
+                document.querySelector('.phone-container').style.display = 'none';
+                fetchAndDisplayPhones(username);
+            } else {
+                alert('Login failed');
+            }
+        })
+        .catch((error) => {
+            console.log('Error retrieving data: ', error);
+        });
+}
+function registerUser() {
+    const username = document.getElementById('username').value;
+    const password = document.getElementById('password').value; // Hash this password in a real application
+
+    fetch('http://54.160.154.98:5000/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({username, password}),
+    })
+        .then(response => response.json())
+        .then(data => {
+            if (data.status === 'success') {
+                console.log('Registration successful');
+                fetchAndDisplayPhones(username);
+            } else {
+                alert('Registration failed. Please try a different username.');
+            }
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+// End of login and register
 
 // Get phones from db function
-function fetchAndDisplayPhones(){
-    const phoneDB = 'http://54.160.154.98:5000/phones';
+function fetchAndDisplayPhones(username){
+    const phoneDB = `http://54.160.154.98:5000/phones?username=${encodeURIComponent(username)}`;
 
     const phoneImages = {
         'iPhone 15': '../images/phones/Apple/iphone_15.png',
@@ -72,6 +128,6 @@ function createSpecDiv(text) {
 }
 
 // Make get phone from DB function runs on window load:
-window.onload = function() {
-    fetchAndDisplayPhones();
-};
+// window.onload = function() {
+//     fetchAndDisplayPhones('test_user');
+// };
