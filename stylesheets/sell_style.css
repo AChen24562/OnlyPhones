@@ -19,7 +19,7 @@ body{
     height: 100vh;
     overflow: hidden;
     margin: 0;
-    background-color: #f2f3f5;
+    background-color: #F4F5F7;
     overflow-y: auto;
 }
 .progress-outer-container{
