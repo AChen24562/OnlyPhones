@@ -28,7 +28,11 @@ body, html {
     display: flex;
     justify-content: center;
     position: relative;
-    z-index: -2;
+    z-index: 0;
+}
+
+button:hover {
+    cursor: pointer;
 }
 
 .hero .container {

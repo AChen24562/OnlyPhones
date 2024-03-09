@@ -123,7 +123,7 @@ next.addEventListener('click', ()=>{
                     // if failed sending
                 });
         }else{
-            alert('Please login or register to submit');
+            alert('Please login or register to submit.');
         }
     } else {
         update();

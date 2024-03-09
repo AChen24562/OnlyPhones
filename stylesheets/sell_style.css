@@ -7,6 +7,9 @@
 /*    box-sizing: border-box;*/
 /*}*/
 body{
+    background-image: url("../images/background_images/moneyPlant-background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Muli', sans-serif;
     display: flex;
     flex-direction: column;
@@ -16,7 +19,7 @@ body{
     height: 100vh;
     overflow: hidden;
     margin: 0;
-    background-color: #f6f7fb;
+    background-color: #f2f3f5;
     overflow-y: auto;
 }
 .progress-outer-container{
@@ -170,7 +173,6 @@ nav ul {
     margin-top: 0;
     width: 50%;
     transform: translateY(20px);
-
 }
 
 .phone-model-container label {
@@ -239,6 +241,7 @@ nav ul {
     max-width: 1000px;
 }
 .main-content {
+    align-self: center;
     flex: 1;
     display: flex;
     flex-direction: column;
