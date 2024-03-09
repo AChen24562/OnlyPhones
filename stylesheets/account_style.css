@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
 
 body{
+    background-image: url("../images/background_images/lineDesign_background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
     font-family: 'Muli', sans-serif;
     color: #222;
     padding-top: 70px;
