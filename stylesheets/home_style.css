@@ -143,19 +143,19 @@ body, html {
     border-radius: 10px;
 }
 
-.listings button {
-    font-family: 'Muli', sans-serif;
-    background-color: #D3E723;
-    border: none;
-    border-radius: 5px;
-    height: 55px;
-    width: 150px;
-    font-size: 16px;
-    font-weight: bold;
-    margin-top: 18px;
-    float: right;
-    position: relative;
-}
+/*.listings button {*/
+/*    font-family: 'Muli', sans-serif;*/
+/*    background-color: #D3E723;*/
+/*    border: none;*/
+/*    border-radius: 5px;*/
+/*    height: 55px;*/
+/*    width: 150px;*/
+/*    font-size: 16px;*/
+/*    font-weight: bold;*/
+/*    margin-top: 18px;*/
+/*    float: right;*/
+/*    position: relative;*/
+/*}*/
 
 
 
@@ -218,32 +218,30 @@ footer {
     color: white;
     position: absolute;
     display: flex;
+    flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
 }
 
-
 /* Links and Info */
 .links-and-info {
     text-align: center;
-    width: 20vw;
+    width: auto;
     padding: 20px;
-    margin: 20px;
 }
 
 .nav-links {
     margin-bottom: 70px;
 }
 
-
 /*Contact Us container */
 .contact-us-container {
     background-color: #f2f2f2;
     padding: 20px;
-    margin: 40px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    flex: 3
+    width: 80%;
+    margin-bottom: 60px;
 }
 
 .contact-us-h1 {
@@ -297,7 +295,7 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 60vw;
+    max-width: 85%;
     margin: 0 auto;
 
 }
