@@ -149,14 +149,17 @@ function update(){
     })
 
     const actives = document.querySelectorAll('.active');
-    progress.style.width = ((actives.length-2)/(circles.length-1))*100 +'%';
+     // ((actives.length-2)/(circles.length-1))*100 +'%';
+    console.log(((actives.length-2)/(circles.length-1))*100 +'%')
     if(currentActive === 1){
+        progress.style.width = '0%';
         document.querySelector('.sell-instructions').style.display = 'block';
         document.querySelector('.multi-choice-container').style.display = 'none';
         document.querySelector('.price-container').style.display = 'none';
 
     }
     else if(currentActive === 2){
+        progress.style.width = '50%';
         // Hide sell instructions and show multi-choice options
         document.querySelector('.sell-instructions').style.display = 'none';
         document.querySelector('.multi-choice-container').style.display = 'block';
@@ -164,7 +167,7 @@ function update(){
         next.textContent = 'Next';
 
     } else if (currentActive === 3){
-
+        progress.style.width = '100%';
         document.querySelector('.sell-instructions').style.display = 'none';
         document.querySelector('.multi-choice-container').style.display = 'none';
         document.querySelector('.price-container').style.display = 'block';

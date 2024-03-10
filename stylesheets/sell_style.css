@@ -395,13 +395,14 @@ nav ul {
 /* Footer */
 footer {
     position: relative;
-    bottom: 0; /* Add this line to align it to the bottom */
+    bottom: 0;
     right: 0;
     height: auto;
     width: 100vw;
     background-color: #0C111D;
     color: white;
     text-align: center;
+    margin-top: 35vw;
 }
 
 /* Additional Info */
