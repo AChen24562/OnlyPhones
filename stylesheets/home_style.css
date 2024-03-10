@@ -128,7 +128,7 @@ button:hover {
     cursor: pointer;
 }
 
-.row1 img {
+.row1 img, .row2 img {
     max-width: 90%;
     max-height: 100%;
     height: auto;

@@ -13,7 +13,6 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-
 }
 
 /*Nav Style*/
@@ -177,9 +176,6 @@ footer {
     /*right: 0;*/
     /*height: auto;*/
     /*width: 100vw;*/
-    /*background-color: #0C111D;*/
-    /*color: white;*/
-    /*align-items: center;*/
 
     width: 100%;
     background-color: #0C111D;

@@ -79,7 +79,7 @@ const staticImages = document.querySelectorAll(".branded")
 // match the brand of the presently expanded/focused brand.
 function updateStaticImages() {
     for (let i = 0; i < staticImages.length; i++) {
-        staticImages[i].innerHTML = "<img src="+ recentListings[expanded][i] +">" +
+        staticImages[i].innerHTML = "<img src="+ recentListings[expanded][i] +" alt='" + listingNames[expanded][i]+"'>"+
             "<h4>"+listingNames[expanded][i]+"</h4>";
     }
 }

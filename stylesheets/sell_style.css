@@ -394,7 +394,7 @@ nav ul {
 
 /* Footer */
 footer {
-    position: fixed; /* Change from static to fixed */
+    position: relative;
     bottom: 0; /* Add this line to align it to the bottom */
     right: 0;
     height: auto;
