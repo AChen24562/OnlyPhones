@@ -112,7 +112,7 @@ button:hover {
     max-width: 95vw;
 }
 
-.row1 .block {
+.row1 .block, .row2 .block {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -124,8 +124,29 @@ button:hover {
     background-size: cover;
     transition: all 0.7s ease-in; /*TODO: doesn't work*/
 }
+
 .block:hover{
     cursor: pointer;
+}
+
+.row2 .block {
+    position: relative;
+}
+
+.row2 h5 {
+    font-size: 16px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    margin: 0;
+    opacity: 0;
+    color: white;
+    transition: opacity 0.3s ease-out;
+}
+
+.row2 .block:hover h5 {
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
 }
 
 .row1 img, .row2 img {
