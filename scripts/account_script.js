@@ -44,6 +44,7 @@ function registerUser() {
         .then(data => {
             if (data.status === 'success') {
                 console.log('Registration successful');
+                alert('Registration successful, displaying phones...');
                 fetchAndDisplayPhones(username);
             } else {
                 alert('Registration failed. Please try a different username.');
