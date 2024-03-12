@@ -1,13 +1,3 @@
-# CS355_P1
-
-## Authors
-* Alex Chen
-* Jennifer Arceo
-* Vadim Allayev
-
-
-## mySQL phone Database code running on an AWS EC2 instance
-```python
 from flask import Flask, request, jsonify
 import mysql.connector
 from mysql.connector import Error
@@ -138,9 +128,3 @@ def register():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port =5000, debug=True)
-```
-
-## Screenshot of Phone DB
-![mySQL Phone Table](images/markdown_images/phone_db.png)
-## Screenshot of user DB
-![mySQL User Table](images/markdown_images/user_db.png)
